@@ -2,4 +2,4 @@ FROM eclipse-temurin:17
 WORKDIR /app
 COPY . /app
 RUN ./gradlew build -x test
-CMD ["./gradlew", "bootRun"]
+CMD ["java", "-Dspring.profiles.active=prod", "-jar", "build/libs/*.jar"] 
